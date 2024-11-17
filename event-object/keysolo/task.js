@@ -25,6 +25,24 @@ class Game {
       При неправильном вводе символа - this.fail();
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
      */
+
+     document.addEventListener('keyup', (e) => {
+        console.log("Нажатие кнопки")
+        const inputValue = e.key;
+//        console.log(inputValue);
+        let symbolCurrent = document.querySelector('.symbol_current').textContent
+//        console.log("symbolCurrent=", symbolCurrent)
+// исключаем Кнопку SHIFT при нажатии и отпускании
+        if (inputValue != 'Shift') {
+            if (inputValue == symbolCurrent && inputValue != 'Shift')  {
+            console.log("succes")
+            this.success()}
+            else  {
+    //        console.log("Fail")
+            this.fail()}
+        }
+  })
+
   }
 
   success() {
@@ -70,6 +88,7 @@ class Game {
         'popcorn',
         'cinema',
         'love',
+        'LOVE',
         'javascript'
       ],
       index = Math.floor(Math.random() * words.length);

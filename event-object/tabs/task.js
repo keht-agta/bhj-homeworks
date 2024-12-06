@@ -16,10 +16,11 @@ tabs.forEach((tab, index) => {
 function showContent(index){
 // удаляем все активные ссылки
     tabs.forEach((tab, i) => {
-        tab.classList.remove('tab__active');
+        tab.classList.remove('tab_active');
+//        console.log(tab)
         contents[i].classList.remove('tab__content_active');
         });
         //добавляем тегу с ИД нужный атрибут активности
-        tabs[index].classList.add('tab__active');
+        tabs[index].classList.add('tab_active');
         contents[index].classList.add('tab__content_active');
     };
